@@ -1,0 +1,22 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- Secrets / local config ----
+.env
+
+# ---- Generated vector store (rebuild with: python rag/ingest.py) ----
+data/chunks.json
+
+# ---- Logs ----
+*.log
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
