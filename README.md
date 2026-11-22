@@ -23,6 +23,32 @@ manual, SOW template, and handover checklist.
 - **Cross-platform** — setup scripts for Linux and Windows, plus a health
   check covering service, models, vector store, and app port.
 
+## Screenshots
+
+**Pipeline overview**
+
+![Local RAG pipeline: documents are embedded and retrieved on-premise; the LLM never calls a public API.](docs/screenshots/architecture.png)
+
+**Grounded answer with cited source**
+
+![Answers are grounded in the retrieved chunks and cite the source file.](docs/screenshots/ui-answer-cited.png)
+
+**Retrieved sources, with source headings**
+
+![Each retrieved chunk keeps its source heading and file.](docs/screenshots/ui-sources-expanded.png)
+
+**Controlled refusal**
+
+![Questions unsupported by the documents are declined instead of hallucinated.](docs/screenshots/ui-refusal.png)
+
+**Local benchmark and delivery package**
+
+![Benchmarked on an 8 GB consumer GPU: ~50 tok/s smoke (model resident), ~5.2 GB VRAM for an 8B Q4 model.](docs/screenshots/terminal-benchmark.png)
+
+![Repeatable health check: service, models, vector store, and app port.](docs/screenshots/healthcheck.png)
+
+![Config-driven delivery: deploy scripts, health check, and handover docs included.](docs/screenshots/file-structure.png)
+
 ## How it works
 
 ```
@@ -103,8 +129,8 @@ Verified against the ingested vector store:
 |---|---|
 | CPU / RAM / GPU | Ryzen 9 8940HX / 16 GB / RTX 5060 Laptop 8 GB |
 | Chat model | qwen3:8b, context 4096, 100% GPU |
-| Resident VRAM | ~5.0 GB (5078 MiB) |
-| Generation speed | ~26.5 tok/s (long answer), ~34.3 tok/s (short smoke test) |
+| Resident VRAM | ~5.0–5.2 GB (5078–5197 MiB) |
+| Generation speed | ~26.5 tok/s (long answer); ~49.8 tok/s (short smoke, model resident) |
 | Embedding dimension | 1024 |
 | Sample knowledge base | 5 docs, 99 chunks, top-5 retrieval |
 
