@@ -55,7 +55,7 @@ Copy `.env.example` to `.env` and adjust:
 | `OLLAMA_BASE` | Ollama API address | `http://localhost:11434` |
 | `CHAT_MODEL` | Answer-generation model | `qwen3:8b` |
 | `EMBED_MODEL` | Embedding model | `bge-m3` |
-| `TOP_K` | Retrieved chunks per question | `3` |
+| `TOP_K` | Retrieved chunks per question | `5` |
 | `CHUNK_SIZE` / `CHUNK_OVERLAP` | Document splitting | `600` / `100` |
 | `TEMPERATURE` | Generation randomness | `0.2` |
 | `INPUT_DIR` / `DATA_DIR` | Document and vector store paths | `inputs` / `data` |
